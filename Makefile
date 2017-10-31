@@ -10,7 +10,7 @@ GNOMEVER=3.26
 all: sass assets
 
 install-gnome-shell:
-	cp -v /usr/share/themes/Pop/gnome-shell/pop.css /usr/share/gnome-shell/theme
+	cp -v /usr/share/themes/Pop-Creative/gnome-shell/Pop-Creative.css /usr/share/gnome-shell/theme
 
 assets: recolor
 	@echo "** Generating the Assets..."
@@ -29,15 +29,15 @@ clean:
 	-rm -rf ./src/gnome-shell/**/*.css
 
 uninstall:
-	-rm -rf $(DESTDIR)/usr/share/themes/Pop
-	-rm -rf $(DESTDIR)/usr/share/themes/Pop-dark
-	-rm -rf $(DESTDIR)/usr/share/themes/Pop-light
-	-rm -rf $(DESTDIR)/usr/share/themes/Pop-compact
-	-rm -rf $(DESTDIR)/usr/share/themes/Pop-light-compact
-	-rm -rf $(DESTDIR)/usr/share/themes/Pop-dark-compact
-	-rm -rf $(DESTDIR)/usr/share/themes/Pop-slim
-	-rm -rf $(DESTDIR)/usr/share/themes/Pop-dark-slim
-	-rm -rf $(DESTDIR)/usr/share/themes/Pop-light-slim
+	-rm -rf $(DESTDIR)/usr/share/themes/Pop-Creative
+	-rm -rf $(DESTDIR)/usr/share/themes/Pop-Creative-dark
+	-rm -rf $(DESTDIR)/usr/share/themes/Pop-Creative-light
+	-rm -rf $(DESTDIR)/usr/share/themes/Pop-Creative-compact
+	-rm -rf $(DESTDIR)/usr/share/themes/Pop-Creative-light-compact
+	-rm -rf $(DESTDIR)/usr/share/themes/Pop-Creative-dark-compact
+	-rm -rf $(DESTDIR)/usr/share/themes/Pop-Creative-slim
+	-rm -rf $(DESTDIR)/usr/share/themes/Pop-Creative-dark-slim
+	-rm -rf $(DESTDIR)/usr/share/themes/Pop-Creative-light-slim
 
 install:
 	@echo "** Installing the theme..."
@@ -45,7 +45,7 @@ install:
 	# Setup
 	for color in $(COLOR_VARIANTS); do \
 	  for size in $(SIZE_VARIANTS); do \
-	    export themedir=$(DESTDIR)$(BASE_DIR)/Pop$$color$$size; \
+	    export themedir=$(DESTDIR)$(BASE_DIR)/Pop-Creative$$color$$size; \
 	    install -d $$themedir; \
 	    cp -ur COPYING $$themedir; \
 	    cp -ur src/index$$color$$size.theme $$themedir/index.theme; \
@@ -55,7 +55,7 @@ install:
 	# Install GNOME Shell Theme
 	for color in $(COLOR_VARIANTS); do \
 	  for size in $(SIZE_VARIANTS); do \
-	    export themedir=$(DESTDIR)$(BASE_DIR)/Pop$$color$$size; \
+	    export themedir=$(DESTDIR)$(BASE_DIR)/Pop-Creative$$color$$size; \
 	    install -d $$themedir/gnome-shell; \
 	    cd $(SRCDIR)/gnome-shell/$(GNOMEVER); \
 	    cp -ur \
@@ -79,7 +79,7 @@ install:
 	      $$themedir/gnome-shell/gnome-shell.css; \
 	    cp -ur \
 	      gnome-shell$$color$$size.css \
-	      $$themedir/gnome-shell/pop.css; \
+	      $$themedir/gnome-shell/Pop-Creative.css; \
 	    glib-compile-resources \
 	      --sourcedir=$$themedir/gnome-shell \
 	      --target=$$themedir/gnome-shell/gnome-shell-thememe.gresource \
@@ -90,7 +90,7 @@ install:
 	# Install GTK2 Theme \
 	for color in $(COLOR_VARIANTS); do \
 	  for size in $(SIZE_VARIANTS); do \
-	    export themedir=$(DESTDIR)$(BASE_DIR)/Pop$$color$$size; \
+	    export themedir=$(DESTDIR)$(BASE_DIR)/Pop-Creative$$color$$size; \
 	    install -d $$themedir/gtk-2.0; \
 	    cd $(SRCDIR)/gtk-2.0; \
 	    cp -ur \
@@ -116,7 +116,7 @@ install:
 	# Install GTK3 Theme \
 	for color in $(COLOR_VARIANTS); do \
 	  for size in $(SIZE_VARIANTS); do \
-	    export themedir=$(DESTDIR)$(BASE_DIR)/Pop$$color$$size; \
+	    export themedir=$(DESTDIR)$(BASE_DIR)/Pop-Creative$$color$$size; \
 	    install -d $$themedir/gtk-common; \
 	    cd $(SRCDIR)/gtk-3.0/gtk-common; \
 	    cp -ur \
@@ -159,7 +159,7 @@ install:
 	# Install Metacity Theme
 	for color in $(COLOR_VARIANTS); do \
 	  for size in $(SIZE_VARIANTS); do \
-	    export themedir=$(DESTDIR)$(BASE_DIR)/Pop$$color$$size; \
+	    export themedir=$(DESTDIR)$(BASE_DIR)/Pop-Creative$$color$$size; \
 	    install -d $$themedir/metacity-1; \
 	    cd $(SRCDIR)/metacity-1; \
 	    cp -ur \
@@ -184,7 +184,7 @@ install:
 	# Install Xfwm Theme
 	for color in $(COLOR_VARIANTS); do \
 	  for size in $(SIZE_VARIANTS); do \
-	    export themedir=$(DESTDIR)$(BASE_DIR)/Pop$$color$$size; \
+	    export themedir=$(DESTDIR)$(BASE_DIR)/Pop-Creative$$color$$size; \
 	    install -d $$themedir/xfwm4; \
 	    cd $(SRCDIR)/xfwm4; \
 	    cp -ur \
