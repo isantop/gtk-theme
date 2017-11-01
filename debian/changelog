@@ -1,3 +1,11 @@
+pop-gtk-theme (3.0.0) UNRELEASED; urgency=medium
+
+  * Re-structure of the entire theme
+  * Individual Components now carried in separate, imported scss files
+  * Build system ported (mostly) to native make
+
+ -- Ian Santopietro <ian@system76.com>  Thu, 26 Oct 2017 11:49:05 -0600
+
 pop-gtk-theme (2.2.3.0) artful; urgency=medium
 
   * Contrast Improvements.
